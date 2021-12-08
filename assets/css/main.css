@@ -2094,7 +2094,7 @@ button:active,
 .button:active {
   background-color: #7eaeac;
 }
-/* I added this line here*/
+/* I added this line here for the collapsible panes*/
 details {
   user-select: none;
 }
