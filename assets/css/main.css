@@ -2541,7 +2541,7 @@ summary::-webkit-details-marker {
   /* Dropdown button */
   .dropdown .dropbtn {
     font-size: 16px;
-    text-align: right;
+    text-align: match-parent;
     border: none;
     outline: none;
     color: rgb(17, 17, 17);
