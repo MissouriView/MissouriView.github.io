@@ -2515,7 +2515,7 @@ summary::-webkit-details-marker {
   /* Navbar container */
   .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(63, 56, 56);
     font-family: Arial;
   }
 
@@ -2537,7 +2537,8 @@ summary::-webkit-details-marker {
 
   /* Dropdown button */
   .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 14px;
+    text-align: right;
     border: none;
     outline: none;
     color: rgb(17, 17, 17);
@@ -2559,7 +2560,7 @@ summary::-webkit-details-marker {
     position: absolute;
     background-color: #0c0c0c02;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(29, 28, 28, 0.2);
     z-index: 1;
   }
 
