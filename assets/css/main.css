@@ -2506,6 +2506,7 @@ summary::-webkit-details-marker {
   }
   #nav {
     float: left;
+    font-size: 16pt;
   }
 
   #nav ul li a span:before {
