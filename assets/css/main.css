@@ -2506,7 +2506,7 @@ summary::-webkit-details-marker {
   }
   #nav {
     float: left;
-    font-size: 16pt;
+    font-size: 17pt;
   }
 
   #nav ul li a span:before {
@@ -2527,7 +2527,7 @@ summary::-webkit-details-marker {
   /* Links inside the navbar */
   .navbar a {
     float: left;
-    font-size: 16px;
+    font-size: 17px;
     color: rgb(5, 5, 5);
     text-align: center;
     padding: 14px 16px;
@@ -2544,7 +2544,7 @@ summary::-webkit-details-marker {
 
   /* Dropdown button */
   .dropdown .dropbtn {
-    font-size: 16px;
+    font-size: 17px;
     text-align: left;
     border: none;
     outline: none;
