@@ -2504,7 +2504,7 @@ summary::-webkit-details-marker {
   #nav ul li a span {
     padding-right: 2.25em;
   }
-  .nav {
+  #nav {
     float: left;
   }
 
