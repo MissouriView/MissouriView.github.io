@@ -2586,6 +2586,9 @@ summary::-webkit-details-marker {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .navbar {
+    float: left;
+  }
 
   /* Footer */
 
