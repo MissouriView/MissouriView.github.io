@@ -2873,3 +2873,10 @@ summary::-webkit-details-marker {
   clear: both;
   display: table;
 }
+
+/* added for the table fix up*/
+table,
+th,
+td {
+  border: 1px solid black;
+}
