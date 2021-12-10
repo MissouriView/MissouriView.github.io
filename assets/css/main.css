@@ -2517,7 +2517,7 @@ summary::-webkit-details-marker {
     overflow: hidden;
     background-color: rgb(63, 56, 56);
     font-family: Arial;
-    text-align: justify;
+    text-align: left;
   }
 
   /* Links inside the navbar */
@@ -2532,7 +2532,7 @@ summary::-webkit-details-marker {
 
   /* The dropdown container */
   .dropdown {
-    float: right;
+    float: left;
     overflow: hidden;
     font-size: 16px;
     text-align: right;
@@ -2541,7 +2541,7 @@ summary::-webkit-details-marker {
   /* Dropdown button */
   .dropdown .dropbtn {
     font-size: 16px;
-    text-align: center;
+    text-align: left;
     border: none;
     outline: none;
     color: rgb(17, 17, 17);
