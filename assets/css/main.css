@@ -2586,7 +2586,7 @@ summary::-webkit-details-marker {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  .navbar {
+  .nav {
     float: left;
   }
 
