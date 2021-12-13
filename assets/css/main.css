@@ -2933,12 +2933,12 @@ td {
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
+  right: auto;
   border-radius: 3px 0 0 3px;
 }
 
 .prev {
-  left: 0;
+  left: auto;
   border-radius: 3px 0 0 3px;
 }
 
