@@ -464,7 +464,123 @@
 														<center><a href="#" class="image featured"><img src="images/one.jpg" style= "width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
 														<center><a href="#" class="image featured"><img src="images/two.jpg" style= "width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
 															<p>
-																ddd
+																The Velodyne LiDAR system can swing 360, but since it is pointing vertically downward the set up swings 
+																180 and the mirror in a 45 degree angle. The system is measuring the distance between itself and a target, 
+																in this case the area interesting, levee river system. The light emitted from the LiDAR system travels to 
+																a target and reflects off of its surface and comes back to its source. Represented with a simple physic 
+																equation D=V*T, accounting for the speed of light emitted from the LiDAR system and knowing the time of 
+																flight. Distance to the target is calculated. In addition, the LiDAR system has a built-in gps system and 
+																GNSS IMU-27 is set up to give us position and orientation of the sensor; known XYZ coordinates of the 
+																reflective surface can be measured and represented by a point.  Using Phoenix Software we can create a 
+																flight path and repeat this process to build a complex map composed of all the points that the LiDAR 
+																system collected.
+
+																Digital elevation models are 3D computer graphics representation of elevation data to represent terrain. 
+																Applications can vary from landscape modeling, city modeling, visualization application, land-use studies, 
+																geological applications. For this lab our purpose is to create a DEM and find the average elevation of 
+																the levee system for flood and drainage modeling.
+
+																<center><a href="#" class="image featured"><img src="images/three.jpg" style= "width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
+															</p>
+
+														<header>
+															<center><h2>Creating a Digital Elevation Model and Calculating Average Elevation</h2></center>
+														</header>	
+															<p>
+																To organize ourselves, lets make two separate folders <br />
+																	Folder 1): Lab#<br />
+																		-Lab#_Name.aprx<br />
+																	Folder2): Steps<br />
+																		1_LAS_Dataset<br />
+																		2_Raster<br />
+																		3_GeneratePoints<br />
+																		4_ExtractValue_Point<br />
+																		5_AvgElevation<br />
+
+																<h1>Step 1 LAS Dataset</h1>
+
+																Within the geoprocessing tool, search up Create LAS Dataset. Use the given LAS Laser Point 
+																Files as inputs. <br />
+
+																Select the correct pathway to the output step folder, <br />
+																Input: LAS_Dataset<br />
+																Output: 1_LAS_Dataset and name the feature <br />
+
+																Coordinates: [XY: WGS 1984 UTM Zone 16N, Z: NAVD 1988]
+
+																<h1>Step 2 LAS Dataset to Raster</h1>
+																Input LAS Dataset: LAS dataset<br />
+																Output: 2_Raster and name the feature 
+
+																Try out different interpolation types and parameters<br />
+																Binning or Triangulation <br />
+																Cell assignment: [Average, IDW]<br />
+																Void: [None, Linear, SImple, Natural Neighbor]<br />
+																Sampling Size: [0.05, 0.2, 0.3, 0.5, 1.0] (cm)
+
+																<h1>Step 3 Digitize Levee Line</h1>
+																In the Catalog Section, find your geodatabase, right click and create feature class<br />
+																1/6 Name your feature class<br />
+		   														Select the Line as your Feature Class Type<br />
+		    													Add output dataset to current map should be the only box checked<br />
+																2/6-6/6 Next and Finish <br />
+																After finish creating the Levee feature class, it will appear on the Content.
+
+																To digitize the Levee line, go to the Edit Ribbon and find the create icon in the 
+																feature box. From there the Create Feature Panel will appear on the right side 
+																where you start drawing the line on top of the Levee. Trace as many lines need, 
+																but follow the Levee (white pixels) The results should be below, adjust symbology 
+																to one’s liking.
+
+																<center><a href="#" class="image featured"><img src="images/six.jpg" style= "width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
+																
+																<h1>Step 4 Generate Points Along Lines</h1>
+
+																Input Feature: Select Levee Feature Line Class<br />
+																Output Feature Class Make a 3_GeneratePoints  and name the feature <br />
+																Point Placement: By Distance<br />
+																Distance: 20 meters<br />
+																Run, Point will appear
+																<center><a href="#" class="image featured"><img src="images/seven.jpg" style= "width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
+
+																<h1>Step 5 Extract Values From Points</h1>
+																Use the Extract Values to Points tool to get the elevation at each point along the Levee Line. Output to 
+																4_ExtractValue_Point and name the feature. A new set of points are created, change the symbology. Once the new 
+																points have been created, right click the points in the Content Panel and view the Attribute Table. We can see 
+																the Raster Values they should be around 72 units.
+
+																<h1>Step 6 Summarize the Mean Elevation</h1>
+																Right click the Attribute Table and select Summarize. Summary Statistics Panel will pop up. From there input your Extracted Levee 
+																Value Points. Output to the Step 5_AvgElevation and name the feature. The Field desired for a statistical analysis is the RasterValu, 
+																Select that and Mean. Hit Ok. A New Standalone Table is created, View and compare the values.
+															</p>
+
+														<header>
+															<h2>Final Ouput</h2>
+														</header>
+
+															<p>
+																The final output should look similar to this figure below. 
+																<center><a href="#" class="image featured"><img src="images/10_final.jpg" style= "width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
+															</p>
+														<header>
+															<h2>Deliverables</h2>
+														</header>
+															<p>
+																Contents shoule be clearly labeled and placed in a zip file. <br />
+																File name should be: GIS####_Lab#_FULLNAME<br />
+																Lab Folder: with ArcGIS Project File<br />
+																Step Folder steps 1-5 (creating las data, raster, generate points, extracting value & average elevation) <br />
+																Word Document of the Questions and Answer<br />
+
+																<h1>Questions:</h1>
+																1. When creating your raster file, some of the area might not be smoothed out. What contributes to the noise or
+																lack of smoothness? In addition, what interpolation types and parameters made it cleaner? <br />
+
+																2. What is the Average Levee Elevation? Specific a range, doesn’t have to be exact <br />
+
+																3. What features can be observed? <br />
+
 															</p>
 													</p>
 												</details>
