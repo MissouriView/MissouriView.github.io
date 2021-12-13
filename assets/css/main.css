@@ -2918,7 +2918,6 @@ td {
 .next {
   cursor: pointer;
   position: absolute;
-  display: outside;
   top: 40%;
   width: 30px;
   padding: 15px;
