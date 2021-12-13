@@ -2917,10 +2917,10 @@ td {
 .prev,
 .next {
   cursor: pointer;
-  position: static;
+  position: absolute;
   top: 40%;
   width: auto;
-  padding: 16px;
+  padding: 15px;
   margin-top: -50px;
   color: white;
   font-weight: bold;
