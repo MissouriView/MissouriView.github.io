@@ -2508,7 +2508,7 @@ summary::-webkit-details-marker {
     padding-right: 2.25em;
   }
   #nav {
-    float: left;
+    float: inline-start;
     font-size: 17pt;
   }
 
@@ -3024,8 +3024,9 @@ td {
   text-align: left;
   width: 100%;
   padding: 0px 0px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
+  float:inline-start
 }
 
 /* Links inside the navbar */
@@ -3043,12 +3044,15 @@ td {
   float: left;
   overflow: hidden;
   font-size: 17px;
+  width: 200%
+
 }
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 550;
+  display: inline-block;
   width: 100%;
   text-align: left;
   border: 3px solid black;
