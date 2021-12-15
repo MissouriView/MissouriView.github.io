@@ -2278,10 +2278,12 @@ summary::-webkit-details-marker {
   padding-left: 0;
 }
 /*font color*/
+/*this aligned navigation choices*/
 #nav ul li a {
   display: block;
-  padding: 0.5em 1.5em 0.5em 1.5em;
-  color: #dce3e2;
+  /*padding: 0.5em 1.5em 0.5em 1.5em;*/
+  padding-right: 20em;
+  color: white;
   text-decoration: none;
   outline: 0;
   border: 0;
@@ -2292,7 +2294,7 @@ summary::-webkit-details-marker {
 }
 
 #nav ul li a span {
-  position: relative;
+  position: absolute;
   display: block;
   font-size: 0.8em;
 }
@@ -3024,7 +3026,7 @@ td {
   text-align: left;
   width: 100%;
   padding: 0px 0px;
-  font-size: 25px;
+  font-size: 27px;
   font-weight: bold;
   float:inline-start
 }
@@ -3045,12 +3047,11 @@ td {
   overflow: hidden;
   font-size: 17px;
   width: 200%
-
 }
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 550;
   display: inline-block;
   width: 100%;
@@ -3075,17 +3076,18 @@ td {
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
-  position: absolute;
-  background-color: #333;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  position: static;
+  background-color: black;
+  min-width: 250px;
+  box-shadow: 200px 200px 200px 200px rgba(10, 235, 235, 0.2);
   z-index: 1;
+  /*padding: 5.5em 5.5em 1.5em 1.5em*/
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  float: none;
-  color: #f00;
+  float: left;
+  color: #222;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
