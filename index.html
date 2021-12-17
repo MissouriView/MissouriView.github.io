@@ -578,7 +578,7 @@
 					<p>
 
 						<center><a href="#" class="image featured"><img src="images/one.jpg"
-							style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+							style="width: 300px; height:auto" display="block" alt="" class="center" /></a></center>
 
 							The acronym LiDAR stands for light detection and ranging. Now commonly called Lidar in 
 						its non-acronym form, Lidar is an active sensor. This means that a Lidar creates and 
@@ -604,7 +604,7 @@
 						to calculate a Digital Elevation Model rather than only terrain. <br />
 
 						<center><a href="#" class="image featured"><img src="images/sand.jpg"
-							style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+							style="width: 300px; height:auto" display="block" alt="" class="center" /></a></center>
 
 							In this lab you will be handling the processing of an LAS file (.las) to a Digital Elevation Model (DEM) 
 						and using that DEM to calculate the mean elevation of the top of the temporary levee. This elevation is 
@@ -664,7 +664,7 @@
 						LAS file. Input all of the supplied LAS Files as Input Files (see image below). <br />
 
 						<center><a href="#" class="image featured"><img src="images/right.jpg"
-							style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+							style="width: 400px; height:800px" display="block" alt="" class="center" /></a></center>
 
 						In the Output LAS dataset field, set the Output LAS Dataset pathway to the Outputs 
 						folder, and name it “LAS_Dataset.lasd”<br />
@@ -709,7 +709,91 @@
 							Here you will run the “LAS Dataset to Raster'' tool three times with different inputs, then you will 
 							compare the inputs visually for a quality check. First, run the tool with the following inputs: <br />
 
-							INSERT TABLE HERE <br />
+							<head>
+								<style>
+									table,
+									th,
+									td {
+										border: 1px solid black;
+									}
+		
+									table.center {
+										margin-left: auto;
+										margin-right: auto;
+									}
+								</style>
+							</head>
+
+							<body>
+								<table color="white" style="width:70%" class="center">
+									<tr>
+										<th>Trials</th>
+										<th>Run 1</th>
+										<th>Run 2</th>
+										<th>Run 3</th>
+									</tr>
+									<tr>
+										<td>Input LAS Dataset</td>
+										<td>LAS Dataset</td>
+										<td>LAS Dataset</td>
+										<td>LAS Dataset</td>
+									</tr>
+									<tr>
+										<td>Output Raster</td>
+										<td>Outputs/DEM_Run1.tiff</td>
+										<td>Outputs/DEM_Run1.tiff</td>
+										<td>Outputs/DEM_Run1.tiff</td>
+									</tr>
+									<tr>
+										<td>Value Field</td>
+										<td>Evaluation</td>
+										<td>Evaluation</td>
+										<td>Evaluation</td>
+									</tr>
+									<tr>
+										<td>Interpolation Type</td>
+										<td>Triangulation</td>
+										<td>Binning</td>
+										<td>Binning</td>
+									</tr>
+									<tr>
+										<td>Cell Assignment</td>
+										<td>None</td>
+										<td>None</td>
+										<td>Average</td>
+									</tr>
+									<tr>
+										<td>Void Fill Method</td>
+										<td>None</td>
+										<td>None</td>
+										<td>Linear</td>
+									</tr>
+									<tr>
+										<td>Output Data Type</td>
+										<td>Floating Point</td>
+										<td>Floating Point</td>
+										<td>Floating Point</td>
+									</tr>
+									<tr>
+										<td>Sampling Type</td>
+										<td>Cell Size</td>
+										<td>Cell Size</td>
+										<td>Cell Size</td>
+									</tr>
+									<tr>
+										<td>Sampling Value</td>
+										<td>0.02</td>
+										<td>0.5</td>
+										<td>1.0</td>
+									</tr>
+									<tr>
+										<td>Z Factor</td>
+										<td>1</td>
+										<td>1</td>
+										<td>1</td>
+									</tr>
+								</table>
+							</body>
 
 
 							Your Run 3 outcome should look something like what is below, with the white colors indicating 
@@ -738,7 +822,7 @@
 							select New, Shapefile…<br />
 
 							<center><a href="#" class="image featured"><img src="images/step3.jpg"
-								style="width: 500px; height:auto" display="block" alt="" class="center" /></a></center>
+								style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
 
 							In the Create Feature Class tool, the Feature Class Location field will populate with the folder name 
 							that you clicked from the Catalog. For Feature Class Name, input “Top_of_Levee_Line.” Select Polyline as 
@@ -761,7 +845,7 @@
 							Save your Edits, and Save your Project.
 
 							<center><a href="#" class="image featured"><img src="images/six.jpg"
-								style="width: 500px; height:auto" display="block" alt="" class="center" /></a></center>
+								style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
 
 						</p>
 
