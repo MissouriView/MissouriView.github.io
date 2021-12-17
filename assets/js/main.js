@@ -157,31 +157,4 @@ function showSlides(n) {
 	captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
-anychart.onDocumentReady(function() {
-// set the data
-var data = [
-    {x: "Run codes correctly and generate figures in notebook", value: "50%"},
-    {x: "Introduction: Background, Objectives and Problem Statement", value: "5%"},
-    {x: "Methods: Explain major functions", value: "20%"},
-    {x: "Results: Evaluation metrics for test set, and train-validation loss curve", value: "10%"},
-    {x: "Discussion: discuss results, difference between segmentation and classification", value: "10%"},
-    {x: "Conclusion", value: "5%"},
-];
-  // create the chart
-  var chart = anychart.pie();
 
-  // set the chart title
-  chart.title("Grading Scale");
-
-  // add the data
-  chart.data(data);
-
-  // display the chart in the container
-  chart.container('container');
-  chart.draw();
-
-});
-// set legend position
-chart.legend().position("right");
-// set items layout
-chart.legend().itemsLayout("vertical");
