@@ -180,8 +180,8 @@
 						and cons of pixel-based (SVM, RF, DNN) and CNN-based OBIA; students also investigate
 						forest change and impacts of human geography and conservation efforts on preserving
 						forest habitats in Madagascar. You can access the data for this tutorial on our <a
-							href="https://github.com/MissouriView/Forest-Conservation-with-AI" target="_blank">github
-							page</a>.
+							href="https://github.com/MissouriView/Forest-Conservation-with-AI" target="_blank"><b>github
+							page</b></a>.
 					</p>
 
 
@@ -496,21 +496,22 @@
 							e. Conclusion (5%)
 					</p>
 
-					<head>
-						<title>JavaScript Pie Chart</title>
-						<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
-						<script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
-					</head>
-					<body>
-					  <div id="container" style="width: 100%; height: 100%"></div>
-					  <script>
-						
-					  </script>
-					</body>
+					<!-- 
+						for each piece of the pie chart create one div and give it
+						a data-value attribute that represents the amount (in degrees) that
+						represents its total visible portion, and a data-start attribute
+						that matches the amount rotation for the starting  (the cumulative 
+						value amount of all the previous pieces).-->
+
+					<div class="pie" data-start="0" data-value="30"></div>
+					<div class="pie highlight" data-start="30" data-value="30"></div>
+					<div class="pie" data-start="60" data-value="40"></div>
+					<div class="pie big" data-start="100" data-value="260"></div>
 
 
-					<center><a href="#" class="image featured"><img src="images/natcapital.jpg"
-								style="width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
+
+						<!--<center><a href="#" class="image featured"><img src="images/natcapital.jpg"
+								style="width: 600px; height:auto" display="block" alt="" class="center" /></a></center>-->
 					</p>
 				</details>
 			</div>
@@ -524,219 +525,353 @@
 					<summary>
 						<header>
 							<center>
-								<h2>Water Disparity and Levee Management- Needs to be fixed</h2>
+								<h2>Determining Top-of-Levee Elevation using Lidar and ArcGIS Pro: Point Cloud Processing to a Digital Elevation Model</h2>
 							</center>
 						</header>
 						<span class="icon">↓</span>
 					</summary>
 					<!--Everything about module needs to go in between these two p's for dropdown!-->
 					<p>
-						This project uses LiDAR and Photogrammetry data for levee managmeent.
-						An essential aspect of large rivers is the human need to control them. Installing
-						levees is one way that society has tried to control flooding on large rivers. As levees
-						age, they need to be managed and upkept. In areas where levees are managed by different groups,
-						instances of inconsistent management can sometimes lead to nearby levees being updated while
-						others
-						are forgotten. One case of inconsistent management, and a subsequent levee failure, is the Len
-						Small Levee on the Mississippi River, just north of it’s confluence with the Ohio River in a
-						stretch
-						of river known as the Dogtooth Bend. The Len Small Levee is a farmer-owned levee currently being
-						eroded
-						by the Mississippi River as it forms a chute across farm lands. Now, residents living in the
-						area must
-						travel by boat if they wish to leave the newly formed island. You can access the data for this
-						tutorial on our <a href="https://github.com/MissouriView/Water-Disparity-and-Levee-Management"
-							target="_blank">github page</a>.<br />
 
-					<header>
-						<center>
-							<h2>Theoretical Background</h2>
-						</center>
-					</header>
-					<p>
-						LiDAR stands for light detection and ranging.This is a relatively new remote sensing technology
-						that allows users to collect very dense points samples of features in 3D. Using these dense
-						points, we
-						can process them into varying visualizations that describe different features on the Earth’s
-						Surface.
-						In this lab you will be explain the processing step to converting LiDAR data a Digital Elevation
-						Model of
-						the average elevation of the Levee and Colorize LSA Points
-
-						Levees can be naturally constructed by sediment deposited or an embankment built alongside a
-						river to prevent
-						the overflow of a river system. Studying the levee systems and river systems along the
-						Mississippi River
-						is important. The role of the Mississippi River is crucial to nearby land owners, residents and
-						agricultural settlements. Understanding the relationship and change of the Mississippi River and
-						Levee has
-						an influence on the settlements near the area. Thus make it an important area of interest to
-						study and
-						monitor.
-					</p>
-
-					<header>
-						<center>
-							<h2>Methods</h2>
-						</center>
-					</header>
-					<p>
-						The Remote Sensing Lab equipment provided:<br />
-						<!--fix this section-->
-						Velodyne HDL-32<br />
-						Sony A7R II w 15mm aspherical lens - 42MP Full-Frame Exmor R BSI CMOS Sensor<br />
-						Upgraded GPS and GNSS IMU-27
-					</p>
-					<center><a href="#" class="image featured"><img src="images/one.jpg"
-								style="width: 300px; height:auto" display="block" alt="" class="center" /></a></center>
-					<center><a href="#" class="image featured"><img src="images/two.jpg"
-								style="width: 300px; height:auto" display="block" alt="" class="center" /></a></center>
-					<p>
-						The Velodyne LiDAR system can swing 360, but since it is pointing vertically downward the set up
-						swings
-						180 and the mirror in a 45 degree angle. The system is measuring the distance between itself and
-						a target,
-						in this case the area interesting, levee river system. The light emitted from the LiDAR system
-						travels to
-						a target and reflects off of its surface and comes back to its source. Represented with a simple
-						physic
-						equation D=V*T, accounting for the speed of light emitted from the LiDAR system and knowing the
-						time of
-						flight. Distance to the target is calculated. In addition, the LiDAR system has a built-in gps
-						system and
-						GNSS IMU-27 is set up to give us position and orientation of the sensor; known XYZ coordinates
-						of the
-						reflective surface can be measured and represented by a point. Using Phoenix Software we can
-						create a
-						flight path and repeat this process to build a complex map composed of all the points that the
-						LiDAR
-						system collected.
-
-						Digital elevation models are 3D computer graphics representation of elevation data to represent
-						terrain.
-						Applications can vary from landscape modeling, city modeling, visualization application,
-						land-use studies,
-						geological applications. For this lab our purpose is to create a DEM and find the average
-						elevation of
-						the levee system for flood and drainage modeling.
-
-						<center><a href="#" class="image featured"><img src="images/three.jpg"
-									style="width: 350px; height:auto" display="block" alt="" class="center" /></a>
-						</center>
-					</p>
-
-					<header>
-						<center>
-							<h2>Creating a Digital Elevation Model and Calculating Average Elevation</h2>
-						</center>
-					</header>
-					<p>
-						To organize ourselves, lets make two separate folders <br />
-						Folder 1): Lab#<br />
-						-Lab#_Name.aprx<br />
-						Folder2): Steps<br />
-						1_LAS_Dataset<br />
-						2_Raster<br />
-						3_GeneratePoints<br />
-						4_ExtractValue_Point<br />
-						5_AvgElevation<br />
-
-					<h1>Step 1 LAS Dataset</h1>
-
-					Within the geoprocessing tool, search up Create LAS Dataset. Use the given LAS Laser Point
-					Files as inputs. <br />
-
-					Select the correct pathway to the output step folder, <br />
-					Input: LAS_Dataset<br />
-					Output: 1_LAS_Dataset and name the feature <br />
-
-					Coordinates: [XY: WGS 1984 UTM Zone 16N, Z: NAVD 1988]
-
-					<h1>Step 2 LAS Dataset to Raster</h1>
-					Input LAS Dataset: LAS dataset<br />
-					Output: 2_Raster and name the feature
-
-					Try out different interpolation types and parameters<br />
-					Binning or Triangulation <br />
-					Cell assignment: [Average, IDW]<br />
-					Void: [None, Linear, SImple, Natural Neighbor]<br />
-					Sampling Size: [0.05, 0.2, 0.3, 0.5, 1.0] (cm)
-
-					<h1>Step 3 Digitize Levee Line</h1>
-					In the Catalog Section, find your geodatabase, right click and create feature class<br />
-					1/6 Name your feature class<br />
-					Select the Line as your Feature Class Type<br />
-					Add output dataset to current map should be the only box checked<br />
-					2/6-6/6 Next and Finish <br />
-					After finish creating the Levee feature class, it will appear on the Content.
-
-					To digitize the Levee line, go to the Edit Ribbon and find the create icon in the
-					feature box. From there the Create Feature Panel will appear on the right side
-					where you start drawing the line on top of the Levee. Trace as many lines need,
-					but follow the Levee (white pixels) The results should be below, adjust symbology
-					to one’s liking.
-
-					<center><a href="#" class="image featured"><img src="images/six.jpg"
-								style="width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
-
-					<h1>Step 4 Generate Points Along Lines</h1>
-
-					Input Feature: Select Levee Feature Line Class<br />
-					Output Feature Class Make a 3_GeneratePoints and name the feature <br />
-					Point Placement: By Distance<br />
-					Distance: 20 meters<br />
-					Run, Point will appear
-					<center><a href="#" class="image featured"><img src="images/seven.jpg"
-								style="width: 600px; height:auto" display="block" alt="" class="center" /></a></center>
-
-					<h1>Step 5 Extract Values From Points</h1>
-					Use the Extract Values to Points tool to get the elevation at each point along the Levee Line.
-					Output to
-					4_ExtractValue_Point and name the feature. A new set of points are created, change the symbology.
-					Once the new
-					points have been created, right click the points in the Content Panel and view the Attribute Table.
-					We can see
-					the Raster Values they should be around 72 units.
-
-					<h1>Step 6 Summarize the Mean Elevation</h1>
-					Right click the Attribute Table and select Summarize. Summary Statistics Panel will pop up. From
-					there input your Extracted Levee
-					Value Points. Output to the Step 5_AvgElevation and name the feature. The Field desired for a
-					statistical analysis is the RasterValu,
-					Select that and Mean. Hit Ok. A New Standalone Table is created, View and compare the values.
-					</p>
-
-					<header>
-						<h2>Final Ouput</h2>
-					</header>
-
-					<p>
-						The final output should look similar to this figure below.
 						<center><a href="#" class="image featured"><img src="images/10_final.jpg"
-									style="width: 600px; height:auto" display="block" alt="" class="center" /></a>
-						</center>
-					</p>
+							style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							This project was funded and conducted by the MissouriView unit of the AmericaView Consortium to 
+						highlight the issue of water equity along the Mississippi River. AmericaView is a nationwide 
+						consortium of higher education institutions, industry partners, and educators that work as 
+						state-level units to develop and integrate new technologies and methodologies into everyday use. 
+						The MissouriView unit of AmericaView started in 2021 and comprised eight regional universities 
+						during its’ first year. This lab assumes that students have completed an Intro-level GIS course and 
+						are familiar with the ArcGIS Pro interface. <br />
+
+							Typically, issues of water equity are associated with drinking water quality, but in 
+						cases of mismatched levee management plans water equity issues also arise when certain 
+						levees are managed and upgraded while others are not. In this example, the Len Small 
+						Levee in southern Illinois, a 17.2 mile-long levee managed by the local farmer’s bureau 
+						protecting $8.79 million of property, 13,500 acres that benefit 1400 local residents. The 
+						levee has repeatedly been breached since its construction in the 1940’s, and its 
+						reconfiguration in 1982. You can access the data for this
+						tutorial on our <a href="https://github.com/MissouriView/Water-Disparity-and-Levee-Management"
+							target="_blank"><b>github page</b></a>.<br />
+
 					<header>
-						<h2>Deliverables</h2>
+						<center>
+							<h2>What is a Levee?</h2>
+						</center>
 					</header>
 					<p>
-						Contents shoule be clearly labeled and placed in a zip file. <br />
-						File name should be: GIS####_Lab#_FULLNAME<br />
-						Lab Folder: with ArcGIS Project File<br />
-						Step Folder steps 1-5 (creating las data, raster, generate points, extracting value & average
-						elevation) <br />
-						Word Document of the Questions and Answer<br />
+						A levee is a flood-control structure erected in order to prevent flood waters from inundating 
+						specific areas of land. The Len Small Levee, aside from protecting valuable farm land from flooding, 
+						is a deflection levee. Deflection levees control the paths of rivers. The Len Small Levee controls the 
+						current path of the Mississippi River by deflecting its path from crossing the narrow swath of land forming 
+						the narrow switchback, or meander bend, known as Dogtooth Bend.
 
-					<h1>Questions:</h1>
-					1. When creating your raster file, some of the area might not be smoothed out. What contributes to
-					the noise or
-					lack of smoothness? In addition, what interpolation types and parameters made it cleaner? <br />
+						Insert pic here, if need be.
+					</p>
 
-					2. What is the Average Levee Elevation? Specific a range, doesn’t have to be exact <br />
+					<header>
+						<center>
+							<h2>Technological Background: Drone Based LiDAR</h2>
+						</center>
+					</header>
+					<header>
+					<p>
 
-					3. What features can be observed? <br />
+						<center><a href="#" class="image featured"><img src="images/one.jpg"
+							style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							The acronym LiDAR stands for light detection and ranging. Now commonly called Lidar in 
+						its non-acronym form, Lidar is an active sensor. This means that a Lidar creates and 
+						records its own energy, pulsed light.  Lidar uses the difference in the timing of pulsed 
+						light emission and returns to determine the distance that an object is from the sensor. 
+						As the Lidar sensor is moved across the landscape (i.e. affixed to a drone, airplane, 
+						satellite, etc…), a rotating mirror allows the sensor to collect a swath of point data 
+						beneath the sensor. The Lidar sensor measures the distance between itself and a target, 
+						in this case our target is the temporary levee and surrounding landscape. 
+						The pulsed light emitted from the LiDAR system travels to the target and reflects from 
+						its surface and at least a portion of that light is returned to the detector housed on 
+						the Lidar unit. Represented with a simple equation: <br />
+
+						<center>d = v (t)</center>
+
+							where d is distance (between the sensor and target), v is the speed of light, and t is 
+						the difference in time between the pulsed emission and its return to the detector. With 
+						v being a constant, the time difference is the significant variable in determining the 
+						distance between the sensor and target. <br />
+
+							To get an accurate elevation, the LiDAR system has a built-in GPS system. During the Lidar survey, 
+						a GPS unit recorded the position and orientation of the sensor so that the Lidar point cloud can be used 
+						to calculate a Digital Elevation Model rather than only terrain. <br />
+
+						<center><a href="#" class="image featured"><img src="images/sand.jpg"
+							style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							In this lab you will be handling the processing of an LAS file (.las) to a Digital Elevation Model (DEM) 
+						and using that DEM to calculate the mean elevation of the top of the temporary levee. This elevation is 
+						important because it determines the depth that the Mississippi River must reach in order to flood the 
+						protected land behind the levee. If we can determine the depth at which the river overtops the levee, we 
+						can better predict flooding in the protected area and alert those who live in the leveed area. <br />
+					</p>
+
+					<header>
+						<center><h2>Deliverables</h2></center>
+					</header>
+
+					In a single zipped folder titled “Lab#_YourLastName”, you are required to submit the following items: <br />
+
+					<li>Three TIFF raster outputs of DEM’s produced in Step 2, Runs 1, 2, and 3</li>
+					<li>The Top of Levee Line shapefile</li>
+					<li>The Top of Levee Points shapefile, with extracted elevation values</li>
+					<li>The ArcGIS Pro Project file (with working data links)</li>
+					<li>Answers to the five integrated questions, included in a separate word document</li>
+
+					<header>
+							<center><h2>Getting Started....</h2></center>
+					</header>
+					<p>
+						It is always proper geospatial etiquette to organize ourselves prior to starting work. So, let’s start out by making three separate folders. 
+
+						<li>Create a parent folder for all of the Lab work, and call it something like “Lab#_YOURLASTNAME”. </li>
+						
+						<li>In that folder, create a sub-folder called “Data” for your supplied spatial data and move all the 
+						supplied LAS files to that folder. </li>
+						
+						<li>Next to the “Data” folder, create another subfolder called “Outputs.” This is where you will save 
+						all of your processing outputs. Prior to starting any GIS work, our folder structure should look like this:</li>
+
+							<li>#_YOURLASTNAME</li>
+							<li>Data</li>
+							<li>Outputs</li>
+
+						<li>Upon opening ArcGIS Pro, save your project to the “Lab#_YOURLASTNAME” folder so that the default 
+						geodatabase is created as a subsidiary of that folder. </li>
+						<li>Create a new map, if necessary, and use the “Add Data” button to add (to the map) the LAS datasets 
+						supplied along with this lab.</li>
+						<li>Create a folder connection with the Lab#_YOURLASTNAME. Open the catalog pane and right click Folders, 
+						Add Folder Connection…, and navigate to the Lab#_YOURLASTNAME folder. Select that folder and Click OK</li>
 
 					</p>
+					
+
+					<header>
+						<center>
+							<h2>Step 1: Creating an LAS Dataset from tiled LAS Data</h2>
+						</center>
+					</header>
+					<p>
+						Open the geoprocessing pane from the top banner, and find/open the “Create LAS Dataset” 
+						geoprocessing tool. This tool will take the tiled LAS data and merge them into a single 
+						LAS file. Input all of the supplied LAS Files as Input Files (see image below). <br />
+
+						<center><a href="#" class="image featured"><img src="images/right.jpg"
+							style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+
+						In the Output LAS dataset field, set the Output LAS Dataset pathway to the Outputs 
+						folder, and name it “LAS_Dataset.lasd”<br />
+
+						For this step, there will be no inputs for Surface Constraints, so leave the Input 
+						Features, Height Field, and Type blank.<br />
+
+						Setting the Coordinate System of the survey ensures that our data are georeferenced 
+						correctly on the surface of the Earth. For drone surveys, the coordinate system is set 
+						during mission planning. Here, the horizontal coordinate system for determining X,Y 
+						coordinates of our survey is WGS 1984 UTM Zone 16N. The vertical, Z-coordinates of our 
+						survey is NAVD 1988. <br />
+
+						Click the Grid icon next to the Coordinate System text box to set the coordinate systems.<br />
+
+						Next, for “Create PRJ for LAS Files”, select No LAS Files so that the projection 
+						files are not created for the initial LAS files input to the tool.<br />
+
+						Finally, make sure the “Compute Statistics” box is checked and the “Store Relative Paths” 
+						box is unchecked.<br />
+
+						<i>Click Run.</i>
+
+						Question 1: In what units are the initially supplied LAS datasets? In what units is the 
+						resulting raster?<br />
+
+						Question 2: Why do we need to run the Create LAS dataset if we’re already supplied with 
+						ten LAS datasets?
+
+						<header>
+							<center>
+								<h2>Step 2: LAS Dataset to Raster & Experimenting with Interpolation Methods</h2>
+							</center>
+						</header>
+						<p>
+							Open the “LAS Dataset to Raster” tool from the Geoprocessing pane in ArcGIS Pro. This tool creates a 
+							raster from an LAS point cloud using the elevation values stored in the LAS dataset. Here, you will be 
+							experimenting with two different interpolation methods while applying varying weighting methods and 
+							sampling values. For Input LAS Dataset, select your LAS dataset from Step 1. For Output Raster, use the 
+							browse folder to write the output to the Outputs folder, giving the LAS dataset the name “TempLevee_DEM.”. <br />
+
+							Here you will run the “LAS Dataset to Raster'' tool three times with different inputs, then you will 
+							compare the inputs visually for a quality check. First, run the tool with the following inputs: <br />
+
+							INSERT TABLE HERE <br />
+
+
+							Your Run 3 outcome should look something like what is below, with the white colors indicating 
+							greater elevation, and dark areas indicating lower elevations. You should also be able to 
+							recognize a secondary road and some scouring (erosion) along the base of the temporary levee. <br />
+
+							<center><a href="#" class="image featured"><img src="images/yuorrun3.jpg"
+								style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							Question 3: Which of the above tool runs (Run 1, Run 2, or Run 3) produced the best 
+							output? By doing a visual assessment of the products, how do you tell which DEM is 
+							the best? <br />
+						</p>
+
+
+						<header>
+							<center>
+								<h2>Step 3: Creating and Digitizing the Top of the Levee Line</h2>
+							</center>
+						</header>
+						<p>
+							In this step, we will manually digitize a line representing the top of the temporary levee. We will start by 
+							creating a new feature class, and then digitizing the line.<br />
+
+							First, in the Catalog Pane, Click Folders and navigate to your Outputs Folder and right click, then 
+							select New, Shapefile…<br />
+
+							<center><a href="#" class="image featured"><img src="images/step3.jpg"
+								style="width: 500px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							In the Create Feature Class tool, the Feature Class Location field will populate with the folder name 
+							that you clicked from the Catalog. For Feature Class Name, input “Top_of_Levee_Line.” Select Polyline as 
+							the Geometry Type, leave Template Dataset blank. Ensure that “No” is selected for the Has M and Has Z 
+							fields. Set the Horizontal Coordinate System to WGS 1984 UTM Zone 16N and the vertical coordinate system 
+							to NAVD 1988. For Feature Class Alias, enter “Top of Levee Line”.<br />
+
+							Click Run.<br />
+
+							Upon tool completion, if the empty feature class is not automatically added to the map, add it from the 
+							Catalog pane. Upon adding the Top_of_Levee_Line to the map, it will appear on the Content pane.<br />
+
+							Next, to digitize the Top of Levee Line, select the Edit tab from the top menu ribbon. Then, select 
+							“Create” to open the Create Features Panel. Ensure the Top of Levee Line is selected, and use the drawing 
+							tools to trace the top of the levee (white-most pixels) to match the light blue line in the example image
+							below. <br />
+
+							Finally, set the symbology to a red line with a thickness of 1 pt.<br />
+
+							Save your Edits, and Save your Project.
+
+							<center><a href="#" class="image featured"><img src="images/six.jpg"
+								style="width: 500px; height:auto" display="block" alt="" class="center" /></a></center>
+
+						</p>
+
+						<header>
+							<center>
+								<h2>Step 4:  Generate Points Along the Top of Levee Line </h2>
+							</center>
+						</header>
+						<p>
+							Next, in order to calculate the mean elevation of the top of the levee, we need to 
+							create a set of points to hold the elevation value we will extract in the next step. 
+							To create the points along the line, we will use the Generate Points Along Lines tool. <br />
+
+							<center><a href="#" class="image featured"><img src="images/step4.jpg"
+								style="width: 400px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							So, open the Generate Points Along Lines tool from the Geoprocessing pane. For Input 
+							Features, select the Top of Levee Line. Click on the browse folder icon next to the 
+							Output Feature Class and direct the path to your Outputs folder, give the Output 
+							Feature Class the name “Top_of_Levee_pts”. Under Point Placement, select the “By 
+							distance” option. For Distance, set the point spacing to place points every 20 meters.<br />
+
+							Click Run.<br />
+
+							<center><a href="#" class="image featured"><img src="images/seven.jpg"
+								style="width: 500px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							The new set of points will appear in your map, directly overlying your Top of Levee
+							Line. Turn off the Top of Levee Line to view your results, which should look similar 
+							to what is below.<br />
+
+						</p>
+
+
+						<header>
+							<center>
+								<h2>Step 5:  Extract Elevation Values to Top of Levee Points</h2>
+							</center>
+						</header>
+						<p>
+							In this step we apply the Extract Values to Points tool, which extracts the value 
+							from the DEM and creates a new copy of the features with the elevation values stored 
+							in the attribute table. <br />
+
+							<center><a href="#" class="image featured"><img src="images/step5_1.jpg"
+								style="width: 500px; height:auto" display="block" alt="" class="center" /></a></center>
+
+							Open the Extract Values to Points tool from the Geoprocessing pane. For Input point 
+							features, select the “Top_of_Levee_pts” feature class. For Input raster, select the 
+							DEM_Run3.tiff from Step 2 above. This is the raster we will pull the elevation 
+							values from. For Output point features, name the output feature class “Top_of_Levee_elev”. Leave 
+							Interpolate values at point locations and Append all the input raster attributes to the output point 
+							features blank.<br />
+
+							Click Run.<br />
+
+							Once the new points have been created, right click the “Top_of_Levee_elev” points in the Content Panel 
+							and view the Attribute Table. We can see the DEM values, they should be around 72 meters.<br />
+
+							<center><a href="#" class="image featured"><img src="images/sttep5_2.jpg"
+								style="width: 500px; height:auto" display="block" alt="" class="center" /></a></center>
+						</p>
+
+
+						<header>
+							<center>
+								<h2>Step 6: Summarize the Mean Elevation</h2>
+							</center>
+						</header>
+						<p>
+							Right click the RASTERVALUE Field in the Attribute Table and select Summarize. 
+							The Summary Statistics Panel will open. From there, set the Input Table the 
+							“Top_of_Levee_elev” points. Set the Output Table to the Outputs folder and name the 
+							table “Mean_Levee_Elevation.csv”. In the Statistics Field, ensure that RASTERVALU is 
+							selected and that Mean is the selected Statistic Type. Importantly, click the red “X” 
+							to clear the Case Field.<br />
+
+							Click Ok. Save your Project.<br />
+
+							Insert Pic here
+
+							A new table holding the answer to Question 4 below is created. Open the new table to 
+							view the mean “as-built” top-of-levee elevation.<br />
+
+						
+
+							Question 4: What is the Average Top of Levee Elevation (in meters)? Report your answer 
+							to the nearest decimeter.<br />
+
+
+
+							Question 5: Why is it important to know the elevation for the top of a levee? Considering 
+							the purpose of levees, is using the mean the best way of calculating the top-of-levee 
+							elevation or is there a better statistic to use in the Summary Statistics (Step 6)?<br />
+
+
+						</p>
+
+						<header>
+							<h2>Submission Instructions</h2>
+						</header>
+
+						<p>
+							If you have followed all of the directions as above, saved all files to the recommended 
+							output folder, and saved the ArcGIS Pro project to the Lab#_YOURLASTNAME folder, you 
+							will be able to zip the Lab#_YOURLASTNAME folder and submit the Lab#_YOURLASTNAME.zip.
+
+						</p>
+
+
 					</p>
 				</details>
 			</div>
