@@ -461,52 +461,72 @@
 							<h2>Grading Scale</h2>
 						</center>
 					</header>
-					<p>
 
+					<head>
+						<style>
+							table,
+							th,
+							td {
+								border: 1px solid black;
+							}
 
-						<html lang="en">
+							table.center {
+								margin-left: auto;
+								margin-right: auto;
+							}
+						</style>
+					</head>
 
-						<head>
-							<meta charset="UTF-8">
-							<meta name="viewport" content="width=device-width, initial-scale=1.0">
-							<titlePie Chart</title>
-								<link rel="stylesheet" href="style.css">
-						</head>
+					<body>
+						<table color="white" style="width:70%" class="center">
+							<tr>
+								<th>Task</th>
+								<th>Percentage</th>
+							</tr>
 
-						<body>
-							<h1Pie Chart</h1>
-								<div class="piechart"></div>
-						</body>
+							<tr>
+								<td>Run code correctly, generate all figures</td>
+								<td>50%</td>
+							</tr>
 
+							<tr>
+								<td>Introduction
+									<li>Appropriate Background</li>
+									<li>Clear Objective</li>
+								</td>
+								<td>5%</td>
+							</tr>
 
-						1. Run all the codes correctly and generate figures in the notebook (50%)<br />
-						2. Write down the report (50% Broken down below)<br />
-							a. Introduction (5%)<br />
-								<li>i. Appropriate background and problem statement</li><br />
-								<li>ii.Clear objective</li><br />
-							b. Methods (20%)<br />
-								<li>i. Clear picture about the methods</li><br />
-								<li>ii. Explain the major functions</li><br />
-							c. Results (10%)<br />
-								<li>i. Evaluation metrics for test set</li><br />
-								<li>ii. Train-validation loss curve</li><br />
-							d. Discussion (10%)<br />
-								<li>i. Discuss the results</li><br />
-								<li>ii.Difference between segmentation and classification</li><br />
-							e. Conclusion (5%)
-					</p>
+							<tr>
+								<td>Methods
+									<li>Clear picture about methods</li>
+									<li>Explain major functions</li>
+								</td>
+								<td>20%</td>
+							</tr>
 
-					<!-- 
-						for each piece of the pie chart create one div and give it
-						a data-value attribute that represents the amount (in degrees) that
-						represents its total visible portion, and a data-start attribute
-						that matches the amount rotation for the starting  (the cumulative 
-						value amount of all the previous pieces).-->
+							<tr>
+								<td>Results
+									<li>Evaluation metrics for test</li>
+									<li>Train-Validation loss curve</li>
+								</td>
+								<td>10%</td>
+							</tr>
 
-					<div class="pie" data-start="0" data-value="30"></div>
-					<div class="pie highlight" data-start="30" data-value="30"></div>
-					<div class="pie" data-start="60" data-value="40"></div>
-					<div class="pie big" data-start="100" data-value="260"></div>
+							<tr>
+								<td>Discussion
+									<li>Discuss the results</li>
+									<li>Difference between segmentation and classification</li>
+								</td>
+								<td>10%</td>
+							</tr>
+
+							<tr>
+								<td>Conclusion</td>
+								<td>5%</td>
+							</tr>
+						</table>
+					</body>
 
 
 
